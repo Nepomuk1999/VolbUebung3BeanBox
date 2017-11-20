@@ -31,7 +31,7 @@ public class DisplayFilter extends ForwardingFilter<PlanarImage> {
 
 
     @Override
-    protected boolean forward(PlanarImage entity) {
+    public boolean forward(PlanarImage entity) {
         JFrame frame = new JFrame();
         if (frameTitle != null) {
             frame.setTitle(frameTitle);

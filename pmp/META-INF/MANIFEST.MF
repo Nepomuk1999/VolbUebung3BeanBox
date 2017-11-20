@@ -1,4 +1,7 @@
 Manifest-Version: 1.0
-Class-Path: jai_core.jar jai_codec.jar mlibwrapper_jai.jar
-Main-Class: 
 
+Name: solution/Wraper/WraperImageSource.class
+Java-Bean: True
+
+Name: solution/Wraper/WraperDisplayFilter.class
+Java-Bean: True

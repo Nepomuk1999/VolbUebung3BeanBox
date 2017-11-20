@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="VolbUebung3BeanBox:jar2">
+    <output-path>$PROJECT_DIR$/out/artifacts/VolbUebung3BeanBox_jar2</output-path>
+    <root id="archive" name="VolbUebung3BeanBox.jar">
+      <element id="module-output" name="VolbUebung3BeanBox" />
+      <element id="library" level="project" name="BeanBox" />
+      <element id="extracted-dir" path="$USER_HOME$/Documents/FHV/FHV_Semester5_IBT5/Systemarchitekturen/Uebungen/Uebung2/jai/jai_core.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Documents/FHV/FHV_Semester5_IBT5/Systemarchitekturen/Uebungen/Uebung2/jai/jai_codec.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Documents/FHV/FHV_Semester5_IBT5/Systemarchitekturen/Uebungen/Uebung2/jai/jai-1_1-mr-doc.zip" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Documents/FHV/FHV_Semester5_IBT5/Systemarchitekturen/Uebungen/Uebung2/jai/mlibwrapper_jai.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
