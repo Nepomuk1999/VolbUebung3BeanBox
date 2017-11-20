@@ -1,24 +1,19 @@
 package solution.Wraper;
 
 
-import interfaces.Writeable;
-
 import javax.media.jai.PlanarImage;
-import java.awt.*;
 import java.io.Serializable;
-import java.io.StreamCorruptedException;
 import java.util.Vector;
 
 import solution.ImageSource;
 
 public class WraperImageSource implements Serializable {
     private String ImageSource;
-    private ImageSource is;
+    private ImageSource is = new ImageSource();;
     private PlanarImage image;
     private Vector listeners;
 
     public WraperImageSource() {
-        is = new ImageSource();
     }
 
     public String getImageSource() {

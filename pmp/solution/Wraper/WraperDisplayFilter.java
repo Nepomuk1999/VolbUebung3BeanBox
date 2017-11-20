@@ -1,4 +1,19 @@
 package solution.Wraper;
 
-public class WraperDisplayFilter {
+import interfaces.Writeable;
+
+import javax.media.jai.PlanarImage;
+import java.io.StreamCorruptedException;
+
+public class WraperDisplayFilter implements FilterListener,Writeable<PlanarImage>{
+
+    @Override
+    public void write(PlanarImage value) throws StreamCorruptedException {
+
+    }
+
+    @Override
+    public void inputFromValueChanged(InputfromEvent ife) {
+
+    }
 }
