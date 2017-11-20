@@ -4,17 +4,26 @@ import java.io.StreamCorruptedException;
 
 import javax.media.jai.JAI;
 import javax.media.jai.PlanarImage;
+import interfaces.Writeable;
+import interfaces.Readable;
 
 import filter.Source;
-import pipes.SimplePipe;
+
 
 public class ImageSource extends Source<PlanarImage> {
 
     String ImageSource = "C:/Users/Jan/Documents/FHV/FHV_Semester5_IBT5/Systemarchitekturen/Uebungen/Uebung2/loetstellen.jpg";
     boolean b = true;
 
-    public ImageSource(SimplePipe<PlanarImage> simplePipe) {
-        super(simplePipe);
+    public ImageSource(){
+    }
+
+    public ImageSource(Readable<PlanarImage> output){
+
+    }
+
+    public ImageSource(Writeable<PlanarImage> output){
+        super(output);
     }
 
     @Override
