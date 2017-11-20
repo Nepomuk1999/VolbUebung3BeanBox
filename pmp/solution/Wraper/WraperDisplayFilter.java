@@ -1,11 +1,12 @@
 package solution.Wraper;
 
+
 import interfaces.Writeable;
 
 import javax.media.jai.PlanarImage;
 import java.io.StreamCorruptedException;
 
-public class WraperDisplayFilter implements FilterListener,Writeable<PlanarImage>{
+public class WraperDisplayFilter implements FilterListener, Writeable<PlanarImage> {
     String test = "";
 
     @Override
