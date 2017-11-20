@@ -42,7 +42,7 @@ public class WraperImageSource implements Serializable {
         }
     }
 
-    protected synchronized void fireWaveformEvent() {
+    protected synchronized void fireFilterEvent() {
         InputfromEvent ie = new InputfromEvent(this,image);
     }
 
