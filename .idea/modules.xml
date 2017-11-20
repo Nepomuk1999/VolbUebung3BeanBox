@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/VolbUebung3BeanBox.iml" filepath="$PROJECT_DIR$/VolbUebung3BeanBox.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../VolbUebung2Bildbearb/src/pmp/pmp.iml" filepath="$PROJECT_DIR$/../VolbUebung2Bildbearb/src/pmp/pmp.iml" />
     </modules>
   </component>
 </project>
