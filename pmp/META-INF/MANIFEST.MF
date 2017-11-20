@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: jai_core.jar jai_codec.jar mlibwrapper_jai.jar
+Main-Class: 
+
