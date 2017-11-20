@@ -6,6 +6,7 @@ import javax.media.jai.PlanarImage;
 import java.io.StreamCorruptedException;
 
 public class WraperDisplayFilter implements FilterListener,Writeable<PlanarImage>{
+    String test = "";
 
     @Override
     public void write(PlanarImage value) throws StreamCorruptedException {
@@ -16,4 +17,5 @@ public class WraperDisplayFilter implements FilterListener,Writeable<PlanarImage
     public void inputFromValueChanged(InputfromEvent ife) {
 
     }
+
 }
