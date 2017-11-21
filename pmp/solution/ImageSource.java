@@ -12,7 +12,7 @@ import filter.Source;
 
 public class ImageSource extends Source<PlanarImage> {
 
-    String ImageSource = "C:/Users/Jan/Documents/FHV/FHV_Semester5_IBT5/Systemarchitekturen/Uebungen/Uebung2/loetstellen.jpg";
+    String ImageSource;
     boolean b = true;
 
     public ImageSource(){
@@ -29,15 +29,10 @@ public class ImageSource extends Source<PlanarImage> {
     @Override
     public PlanarImage read() throws StreamCorruptedException {
         PlanarImage current = null;
-        while (b) {
-            current = JAI.create("fileload", ImageSource);
-            b = false;
-        }
-        if (!b) {
-            return current;
-        } else {
-            return null;
-        }
+        current = JAI.create("fileload", ImageSource);
+        
+        return current;
+
     }
 
     public void setImageSource(String imageSource) {

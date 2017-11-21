@@ -12,9 +12,11 @@ import java.security.InvalidParameterException;
 import static javax.media.jai.operator.MedianFilterDescriptor.MEDIAN_MASK_SQUARE;
 
 public class MedianFilter extends DataTransformationFilter2<PlanarImage, PlanarImage> {
+    Integer _maskSize;
 
     public MedianFilter(Writeable<PlanarImage> output) throws InvalidParameterException {
         super(output);
+        _maskSize = 21;
     }
 
     public MedianFilter(Readable<PlanarImage> input) throws InvalidParameterException {
@@ -22,10 +24,17 @@ public class MedianFilter extends DataTransformationFilter2<PlanarImage, PlanarI
     }
 
     @Override
-    protected PlanarImage process(PlanarImage entity) {
-        Integer maskSize = 21;
+    public PlanarImage process(PlanarImage entity) {
         MedianFilterShape shape = MEDIAN_MASK_SQUARE;
-        return entity = MedianFilterDescriptor.create(entity, shape, maskSize,
+        return entity = MedianFilterDescriptor.create(entity, shape, _maskSize,
                 null);
+    }
+
+    public void setMaskSize(Integer i){
+        _maskSize = i;
+    }
+
+    public Integer getMaskSize() {
+        return _maskSize;
     }
 }

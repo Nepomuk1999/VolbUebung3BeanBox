@@ -21,7 +21,7 @@ public class ErodeDilateFilter extends DataTransformationFilter2<PlanarImage, Pl
     }
 
     @Override
-    protected PlanarImage process(PlanarImage entity) {
+    public PlanarImage process(PlanarImage entity) {
         float[] kernelMatrix = new float[]{0, 50, 50, 0
                 , 50, 0, 0, 50
                 , 50, 0, 0, 50

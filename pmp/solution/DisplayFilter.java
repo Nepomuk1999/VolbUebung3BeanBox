@@ -43,6 +43,7 @@ public class DisplayFilter extends ForwardingFilter<PlanarImage> {
         //ParameterBlock pb = new ParameterBlock();
         //pb.add(entity);
         DisplayJAI dj = new DisplayJAI(entity);
+
         contentPane.add(new JScrollPane(dj), BorderLayout.CENTER);
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

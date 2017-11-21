@@ -1,7 +1,25 @@
 Manifest-Version: 1.0
 
-Name: solution/Wraper/WraperImageSource.class
+Name: solution/Wrapper/WrapperImageSource.class
 Java-Bean: True
 
-Name: solution/Wraper/WraperDisplayFilter.class
+Name: solution/Wrapper/WrapperDisplayFilter.class
+Java-Bean: True
+
+Name: solution/Wrapper/WrapperRoiFilter.class
+Java-Bean: True
+
+Name: solution/Wrapper/WrapperSelectionFilter.class
+Java-Bean: True
+
+Name: solution/Wrapper/WrapperMedianFilter.class
+Java-Bean: True
+
+Name: solution/Wrapper/WrapperImageSaveFilter.class
+Java-Bean: True
+
+Name: solution/Wrapper/WrapperErodeDilateFilter.class
+Java-Bean: True
+
+Name: solution/Wrapper/WrapperFilterCalcCentroids.class
 Java-Bean: True

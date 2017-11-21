@@ -1,15 +1,12 @@
-package solution.Wraper;
-
-import interfaces.Writeable;
+package solution.Wrapper;
 
 import javax.media.jai.PlanarImage;
-import java.io.StreamCorruptedException;
 import java.util.EventObject;
 
-public class InputEvent extends EventObject {
+public class PlanarImageEvent extends EventObject {
     private PlanarImage value;
 
-    public InputEvent(Object source, PlanarImage value) {
+    public PlanarImageEvent(Object source, PlanarImage value) {
         super(source);
         this.value = value;
     }
