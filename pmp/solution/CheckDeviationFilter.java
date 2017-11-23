@@ -13,7 +13,7 @@ import java.util.LinkedList;
 public class CheckDeviationFilter extends DataTransformationFilter2<ResultModel, ResultModel> {
 
     LinkedList<Coordinate> _expectedCentroids;
-    Integer range = 0;
+    Integer range = 10;
 
     public CheckDeviationFilter(Writeable<ResultModel> output, LinkedList<Coordinate> expectedCentroids, Integer range)
             throws InvalidParameterException {
@@ -64,4 +64,11 @@ public class CheckDeviationFilter extends DataTransformationFilter2<ResultModel,
         this.range = range;
     }
 
+    public LinkedList<Coordinate> getExpectedCentroids() {
+        return _expectedCentroids;
+    }
+
+    public void setExpectedCentroids(LinkedList<Coordinate> _expectedCentroids) {
+        this._expectedCentroids = _expectedCentroids;
+    }
 }
