@@ -5,7 +5,6 @@
       <element id="archive" name="VolbUebung3BeanBox.jar">
         <element id="module-output" name="VolbUebung3BeanBox" />
       </element>
-      <element id="library" level="project" name="jai" />
     </root>
   </artifact>
 </component>

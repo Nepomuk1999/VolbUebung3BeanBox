@@ -9,5 +9,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="BeanBox" level="project" />
     <orderEntry type="library" name="jai-1_1_2_01" level="project" />
+    <orderEntry type="library" name="jai" level="project" />
   </component>
 </module>

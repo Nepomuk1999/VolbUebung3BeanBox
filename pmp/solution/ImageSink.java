@@ -31,7 +31,7 @@ public class ImageSink extends Sink<ResultModel> {
     }
 
     @Override
-    public void write(ResultModel value) throws StreamCorruptedException {
+    public void write(ResultModel value) {
         if (value != null) {
             sb.append("Uebung 2: Bildverarbeitung in einer Pipes&Filters Architektur:").append(System.lineSeparator());
             sb.append("File: " + filename).append(System.lineSeparator());

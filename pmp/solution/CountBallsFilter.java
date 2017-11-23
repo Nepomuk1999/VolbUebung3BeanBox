@@ -20,7 +20,7 @@ public class CountBallsFilter extends DataTransformationFilter2<ArrayList<Coordi
     }
 
     @Override
-    protected ResultModel process(ArrayList<Coordinate> entity) {
+    public ResultModel process(ArrayList<Coordinate> entity) {
         if (entity != null) {
             return new ResultModel(entity);
         } else {

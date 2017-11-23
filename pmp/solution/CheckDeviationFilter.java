@@ -13,24 +13,29 @@ import java.util.LinkedList;
 public class CheckDeviationFilter extends DataTransformationFilter2<ResultModel, ResultModel> {
 
     LinkedList<Coordinate> _expectedCentroids;
-    Integer _range;
+    Integer range = 0;
 
     public CheckDeviationFilter(Writeable<ResultModel> output, LinkedList<Coordinate> expectedCentroids, Integer range)
             throws InvalidParameterException {
         super(output);
-        _range = range;
+        this.range = range;
         _expectedCentroids = expectedCentroids;
     }
 
     public CheckDeviationFilter(Readable<ResultModel> input, LinkedList<Coordinate> expectedCentroids, Integer range)
             throws InvalidParameterException {
         super(input);
-        _range = range;
+        this.range = range;
         _expectedCentroids = expectedCentroids;
     }
 
+    public CheckDeviationFilter(Writeable<ResultModel> output) throws InvalidParameterException {
+        super(output);
+    }
+
+
     @Override
-    protected ResultModel process(ResultModel entity) {
+    public ResultModel process(ResultModel entity) {
 
         for (Ball ball : entity.getBalls()) {
             ball.setIsInTolerance(isInTolerance(ball.getCoordinates()));
@@ -42,8 +47,8 @@ public class CheckDeviationFilter extends DataTransformationFilter2<ResultModel,
         int xToCheck = toCheck._x;
         int yToCheck = toCheck._y;
         for (Coordinate c : _expectedCentroids) {
-            if (xToCheck >= (c._x - _range / 2) && xToCheck <= (c._x + _range / 2)) {
-                if (yToCheck >= (c._y - _range / 2) && yToCheck <= (c._y + _range / 2)) {
+            if (xToCheck >= (c._x - range / 2) && xToCheck <= (c._x + range / 2)) {
+                if (yToCheck >= (c._y - range / 2) && yToCheck <= (c._y + range / 2)) {
                     return true;
                 }
             }
@@ -51,5 +56,12 @@ public class CheckDeviationFilter extends DataTransformationFilter2<ResultModel,
         return false;
     }
 
+    public Integer getRange() {
+        return range;
+    }
+
+    public void setRange(Integer range) {
+        this.range = range;
+    }
 
 }
