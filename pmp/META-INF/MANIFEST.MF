@@ -23,3 +23,12 @@ Java-Bean: True
 
 Name: solution/Wrapper/WrapperFilterCalcCentroids.class
 Java-Bean: True
+
+Name: solution/Wrapper/WrapperCheckDeviationFilter.class
+Java-Bean: True
+
+Name: solution/Wrapper/WrapperCountBallsFilter.class
+Java-Bean: True
+
+Name: solution/Wrapper/WrapperImageSink.class
+Java-Bean: True
