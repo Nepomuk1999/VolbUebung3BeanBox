@@ -25,7 +25,6 @@ public class WrapperCheckDeviationFilter extends HandelResultModelListener imple
     private Integer y5 = 81;
     private Integer x6 = 396;
     private Integer y6 = 81;
-    private Integer range = 10;
 
 
     public WrapperCheckDeviationFilter() {
@@ -69,10 +68,8 @@ public class WrapperCheckDeviationFilter extends HandelResultModelListener imple
     }
 
     public void setRange(Integer range) {
-        this.range = range;
         filter.setRange(range);
     }
-
 
     public Integer getX1() {
         return x1;
