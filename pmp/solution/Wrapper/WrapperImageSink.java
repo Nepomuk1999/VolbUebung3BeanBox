@@ -21,7 +21,13 @@ public class WrapperImageSink extends HandelResultModelListener implements Resul
     @Override
     public void inputFromResultModelEvent(ResultModelEvent resultModelEvent) {
         model = resultModelEvent.getValue();
-        sink.write(model);
+        try {
+            sink.setrange(resultModelEvent.getRange());
+            sink.setStartcoordinates(resultModelEvent.getExpectedCentroids());
+            sink.write(model);
+        } catch (StreamCorruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 

@@ -51,7 +51,7 @@ public class WrapperCheckDeviationFilter extends HandelResultModelListener imple
 
         ResultModel result = filter.process(model);
         if (!listenersEmpty()) {
-            fireFilterListener(result);
+            fireFilterListener(result, getRange(), expectedCentroids);
             System.out.println("fire: CheckDeviationFilter");
         }
     }

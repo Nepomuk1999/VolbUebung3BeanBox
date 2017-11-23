@@ -24,7 +24,7 @@ public class WrapperCountBallsFilter extends HandelResultModelListener implement
         centroids = ale.getValue();
         ResultModel result = cbf.process(centroids);
         if (!listenersEmpty()) {
-            fireFilterListener(result);
+            fireFilterListener(result,-1,null);
             System.out.println("fire: FilterCountBalls");
         }
     }

@@ -13,10 +13,9 @@ import java.util.Date;
 import java.util.LinkedList;
 
 public class ImageSink extends Sink<ResultModel> {
-    String outputpath = "C:/Users/Jan/Documents/FHV/FHV_Semester5_IBT5/Systemarchitekturen/Uebungen/Uebung2/Output/";
     String filename = new SimpleDateFormat("yyyyMMddHHmm'.txt'").format(new Date());
 
-    String output = outputpath + filename;
+    String output = filename;
     StringBuilder sb = new StringBuilder();
 
     LinkedList<Coordinate> startcoordinates;
@@ -31,24 +30,24 @@ public class ImageSink extends Sink<ResultModel> {
     }
 
     @Override
-    public void write(ResultModel value) {
+    public void write(ResultModel value) throws StreamCorruptedException {
         if (value != null) {
             sb.append("Uebung 2: Bildverarbeitung in einer Pipes&Filters Architektur:").append(System.lineSeparator());
             sb.append("File: " + filename).append(System.lineSeparator());
-            sb.append("Range: " + range + "%").append(System.lineSeparator());
+            sb.append("Range: " + range + "").append(System.lineSeparator());
             sb.append(System.lineSeparator());
             sb.append("Input: ").append(System.lineSeparator());
-            int i = startcoordinates.size();
+            int i = 1;
             for (Coordinate coordinate : startcoordinates) {
                 sb.append("Centroid " + i + ": " + coordinate.toString()).append(System.lineSeparator());
-                i--;
+                i++;
             }
             sb.append(System.lineSeparator());
             sb.append("Output: ").append(System.lineSeparator());
-            i = value.getBalls().size();
+            i = 1;
             for (Ball ball : value.getBalls()) {
                 sb.append("Centroid " + i + ": " + ball.getCoordinates().toString() + " " + ball.getIsInTolerance()).append(System.lineSeparator());
-                i--;
+                i++;
             }
             sb.append(System.lineSeparator());
             try {
@@ -66,11 +65,11 @@ public class ImageSink extends Sink<ResultModel> {
         }
     }
 
-    public void setStartcoordinates(LinkedList<Coordinate> sc) {
+    public void setStartcoordinates(LinkedList<Coordinate> sc){
         startcoordinates = sc;
     }
 
-    public void setrange(int r) {
+    public void setrange(int r){
         range = r;
     }
 }
