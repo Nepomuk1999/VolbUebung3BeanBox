@@ -21,6 +21,7 @@ public class WrapperSelectionFilter extends HandelPlanarImageListeners implement
 
     public void setLow(Integer low) {
         sf.setLow(low);
+        fireE();
     }
 
     public Integer getHigh() {
@@ -29,6 +30,7 @@ public class WrapperSelectionFilter extends HandelPlanarImageListeners implement
 
     public void setHigh(Integer high) {
         sf.setHigh(high);
+        fireE();
     }
 
     public Integer getConstants() {
@@ -37,21 +39,26 @@ public class WrapperSelectionFilter extends HandelPlanarImageListeners implement
 
     public void setConstants(Integer constants) {
         sf.setConstants(constants);
+        fireE();
     }
 
     @Override
     public void inputFromPlanarImageEvent(PlanarImageEvent ife) {
         image = ife.getValue();
-        PlanarImage resultSelectionFilter = sf.process(image);
-        if(listenersEmpty() == false) {
-            fireFilterListener(resultSelectionFilter);
-            System.out.println("fire: SelectionFilter");
-        }
+        fireE();
     }
 
     @Override
     public void write(PlanarImage value) throws StreamCorruptedException {
 
+    }
+    
+    public void fireE(){
+        PlanarImage resultSelectionFilter = sf.process(image);
+        if(listenersEmpty() == false) {
+            fireFilterListener(resultSelectionFilter);
+            System.out.println("fire: SelectionFilter");
+        }
     }
 
 }

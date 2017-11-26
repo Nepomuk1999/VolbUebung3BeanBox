@@ -21,20 +21,25 @@ public class WrapperMedianFilter extends HandelPlanarImageListeners implements P
 
     public void setMaskSize(Integer i){
         mf.setMaskSize(i);
+        fireE();
     }
 
     @Override
     public void inputFromPlanarImageEvent(PlanarImageEvent ife) {
         image = ife.getValue();
-        PlanarImage resultMedianFilter = mf.process(image);
-        if(listenersEmpty() == false) {
-            fireFilterListener(resultMedianFilter);
-            System.out.println("fire: MedianFilter");
-        }
+        fireE();
     }
 
     @Override
     public void write(PlanarImage value) throws StreamCorruptedException {
 
+    }
+
+    public void fireE(){
+        PlanarImage resultMedianFilter = mf.process(image);
+        if(listenersEmpty() == false) {
+            fireFilterListener(resultMedianFilter);
+            System.out.println("fire: MedianFilter");
+        }
     }
 }

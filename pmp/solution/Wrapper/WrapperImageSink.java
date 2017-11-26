@@ -13,6 +13,7 @@ public class WrapperImageSink extends HandelResultModelListener implements Resul
     private String fileName = "" + System.currentTimeMillis();
     private ResultModel model;
     private ImageSink sink;
+    ResultModelEvent resultModelEvent;
 
     public WrapperImageSink() {
         sink = new ImageSink();
@@ -20,14 +21,9 @@ public class WrapperImageSink extends HandelResultModelListener implements Resul
 
     @Override
     public void inputFromResultModelEvent(ResultModelEvent resultModelEvent) {
-        model = resultModelEvent.getValue();
-        try {
-            sink.setrange(resultModelEvent.getRange());
-            sink.setStartcoordinates(resultModelEvent.getExpectedCentroids());
-            sink.write(model);
-        } catch (StreamCorruptedException e) {
-            e.printStackTrace();
-        }
+       this.resultModelEvent = resultModelEvent;
+       model = resultModelEvent.getValue();
+       fireE();
     }
 
 
@@ -44,6 +40,7 @@ public class WrapperImageSink extends HandelResultModelListener implements Resul
 
     public void setFileOutputPath(String fileOutputPath) {
         this.fileOutputPath = fileOutputPath;
+        fireE();
     }
 
     public String getFileName() {
@@ -52,6 +49,17 @@ public class WrapperImageSink extends HandelResultModelListener implements Resul
 
     public void setFileName(String fileName) {
         this.fileName = fileName;
+        fireE();
+    }
+
+    public void fireE(){
+        try {
+            sink.setrange(resultModelEvent.getRange());
+            sink.setStartcoordinates(resultModelEvent.getExpectedCentroids());
+            sink.write(model);
+        } catch (StreamCorruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 }

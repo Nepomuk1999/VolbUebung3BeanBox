@@ -29,4 +29,5 @@ public class WrapperRoiFilter extends HandelPlanarImageListeners implements Plan
     public void write(PlanarImage value) throws StreamCorruptedException {
 
     }
+
 }

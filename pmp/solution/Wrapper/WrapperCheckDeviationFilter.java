@@ -34,6 +34,15 @@ public class WrapperCheckDeviationFilter extends HandelResultModelListener imple
     @Override
     public void inputFromResultModelEvent(ResultModelEvent resultModelEvent) {
         model = resultModelEvent.getValue();
+        fireE();
+    }
+
+    @Override
+    public void write(ResultModel value) throws StreamCorruptedException {
+    }
+
+    public void fireE(){
+        expectedCentroids = new LinkedList<>();
         //setup for expected Cords
         Coordinate c1 = new Coordinate(x1, y1);
         expectedCentroids.add(c1);
@@ -56,10 +65,6 @@ public class WrapperCheckDeviationFilter extends HandelResultModelListener imple
         }
     }
 
-    @Override
-    public void write(ResultModel value) throws StreamCorruptedException {
-    }
-
     // Getter & Setter
 
 
@@ -69,6 +74,7 @@ public class WrapperCheckDeviationFilter extends HandelResultModelListener imple
 
     public void setRange(Integer range) {
         filter.setRange(range);
+        fireE();
     }
 
     public Integer getX1() {
@@ -77,6 +83,7 @@ public class WrapperCheckDeviationFilter extends HandelResultModelListener imple
 
     public void setX1(Integer x1) {
         this.x1 = x1;
+        fireE();
     }
 
     public Integer getY1() {
@@ -85,6 +92,7 @@ public class WrapperCheckDeviationFilter extends HandelResultModelListener imple
 
     public void setY1(Integer y1) {
         this.y1 = y1;
+        fireE();
     }
 
     public Integer getX2() {
@@ -93,6 +101,7 @@ public class WrapperCheckDeviationFilter extends HandelResultModelListener imple
 
     public void setX2(Integer x2) {
         this.x2 = x2;
+        fireE();
     }
 
     public Integer getY2() {
@@ -101,6 +110,7 @@ public class WrapperCheckDeviationFilter extends HandelResultModelListener imple
 
     public void setY2(Integer y2) {
         this.y2 = y2;
+        fireE();
     }
 
     public Integer getX3() {
@@ -109,6 +119,7 @@ public class WrapperCheckDeviationFilter extends HandelResultModelListener imple
 
     public void setX3(Integer x3) {
         this.x3 = x3;
+        fireE();
     }
 
     public Integer getY3() {
@@ -117,6 +128,7 @@ public class WrapperCheckDeviationFilter extends HandelResultModelListener imple
 
     public void setY3(Integer y3) {
         this.y3 = y3;
+        fireE();
     }
 
     public Integer getX4() {
@@ -125,6 +137,7 @@ public class WrapperCheckDeviationFilter extends HandelResultModelListener imple
 
     public void setX4(Integer x4) {
         this.x4 = x4;
+        fireE();
     }
 
     public Integer getY4() {
@@ -133,6 +146,7 @@ public class WrapperCheckDeviationFilter extends HandelResultModelListener imple
 
     public void setY4(Integer y4) {
         this.y4 = y4;
+        fireE();
     }
 
     public Integer getX5() {
@@ -141,6 +155,7 @@ public class WrapperCheckDeviationFilter extends HandelResultModelListener imple
 
     public void setX5(Integer x5) {
         this.x5 = x5;
+        fireE();
     }
 
     public Integer getY5() {
@@ -149,6 +164,7 @@ public class WrapperCheckDeviationFilter extends HandelResultModelListener imple
 
     public void setY5(Integer y5) {
         this.y5 = y5;
+        fireE();
     }
 
     public Integer getX6() {
@@ -157,6 +173,7 @@ public class WrapperCheckDeviationFilter extends HandelResultModelListener imple
 
     public void setX6(Integer x6) {
         this.x6 = x6;
+        fireE();
     }
 
     public Integer getY6() {
@@ -165,6 +182,7 @@ public class WrapperCheckDeviationFilter extends HandelResultModelListener imple
 
     public void setY6(Integer y6) {
         this.y6 = y6;
+        fireE();
     }
 
 }

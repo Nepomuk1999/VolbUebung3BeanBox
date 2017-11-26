@@ -21,21 +21,26 @@ public class WrapperImageSaveFilter extends HandelPlanarImageListeners implement
 
     public void setPath(String i){
         isf.setFileOutputPath(i);
+        fireE();
     }
 
     @Override
     public void inputFromPlanarImageEvent(PlanarImageEvent ife) {
         image = ife.getValue();
-        Boolean resultforward = isf.forward(image);
-        if(listenersEmpty() == false) {
-            fireFilterListener(image);
-            System.out.println("fire: ImageSaveFilter");
-        }
+        fireE();
     }
 
     @Override
     public void write(PlanarImage value) throws StreamCorruptedException {
 
+    }
+
+    public void fireE(){
+        Boolean resultforward = isf.forward(image);
+        if(listenersEmpty() == false) {
+            fireFilterListener(image);
+            System.out.println("fire: ImageSaveFilter");
+        }
     }
 
 }
